@@ -1,0 +1,16 @@
+<p>
+Blog: <strong><?php echo $this->object['content'] ?></strong>
+</p>
+<p>
+  <a href="<?php echo $this->url(array('action' => 'blog')) ?>">lista wpisów</a>
+  <a href="<?php
+    echo $this->url(
+      array('action' => 'edit', 'id' => $this->object['id'])
+    )
+  ?>">edytuj</a>
+  <a href="<?php
+    echo $this->url(
+      array('action' => 'delete', 'id' => $this->object['id'])
+    )
+  ?>">Usuń</a>
+</p>
