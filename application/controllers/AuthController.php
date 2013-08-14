@@ -18,7 +18,7 @@ class AuthController extends Zend_Controller_Action
                 null,
                 'user',
                 'username',
-                'password',
+                'password'
             );
 
             $adapter->setIdentity($form->getValue('username'));
