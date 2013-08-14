@@ -29,10 +29,10 @@ class AuthController extends Zend_Controller_Action
 
             if ($result->isValid()) {
                 return $this->_helper->redirector(
-                    'index',
-                    'auth',
-                    'index',
-                    'default'
+                    'index', // akcja
+                    'index', // kontroler
+                    'default', //moduł
+                    array() // parametry
                 );
             }
             $form->password->addError('Błędna próba logowania!');
