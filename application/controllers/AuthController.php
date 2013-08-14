@@ -2,7 +2,6 @@
 
 class AuthController extends Zend_Controller_Action
 {
-
     public function authAction()
     {
         $this->view->form = new Application_Form_Login();
@@ -10,7 +9,7 @@ class AuthController extends Zend_Controller_Action
 
     public function loginAction()
     {
-        $this->_helper->viewRenderer('index');
+        $this->_helper->viewRenderer('auth');
         $form = new Application_Form_Login();
         if ($form->isValid($this->getRequest()->getPost())) {
 
@@ -31,11 +30,12 @@ class AuthController extends Zend_Controller_Action
             if ($result->isValid()) {
                 return $this->_helper->redirector(
                     'index',
+                    'auth',
                     'index',
                     'default'
                 );
             }
-            $form->password->addError('BĹÄdna prĂłba logowania!');
+            $form->password->addError('Błędna próba logowania!');
         }
         $this->view->form = $form;
     }
