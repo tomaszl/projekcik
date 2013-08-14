@@ -7,7 +7,7 @@ public function _initDbNames()
     try {
 	$config = array(
 	    'host'     => 'localhost',
-	    'username' => 'root','password' => '',
+	    'username' => 'root','password' => 'real_password',
 	    'dbname'   => 'reinfo',
 	);
 	$db = Zend_Db::factory('PDO_MYSQL', $config);
